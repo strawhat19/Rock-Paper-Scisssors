@@ -436,6 +436,14 @@ main footer .copyright {
 }
 
 /* Media Queries */
+/* iPad and Above */
+@media screen and (min-width: 992px) {
+
+    .appContent {
+        justify-content: center;
+    }
+
+}
 
 /* iPad and Below */
 @media screen and (max-width: 992px) {
