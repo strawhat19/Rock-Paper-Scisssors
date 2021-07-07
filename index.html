@@ -9,7 +9,7 @@
     <!-- Importing Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
     <!-- Site Icon -->
-    <link rel="icon" href="https://piratechs.com/wp-content/uploads/2019/05/Icon.svg" type="image/x-icon">
+    <link rel="icon" href="./assets/images/RPS Logoaqua-green.svg" type="image/x-icon">
     <!-- This is a Game of Rock Paper Scissors between the User and the Computer -->
     <title>Rock | Paper | Scissors</title>
 </head>
@@ -17,15 +17,23 @@
     <!-- Game Header Sidebar -->
     <header class="header sidebar aside headerSidebar" id="header">
         <!-- Sidebar Topbar -->
-        <div class="topbar center centerThis hoverSlide">
+        <div class="topbar center centerThis hoverSlide" title="Home">
             <a href="/" class="home homeLink" id="homeLink">
                 <i class="fas fa-home home"></i> ROCK // PAPER // SCISSORS</a>
         </div>
         <!-- Sidebar Content -->
         <div class="app appTitle sidebarMain">
-            <div class="appContent">
+            <div class="appContent appTitle">
                 <h1>Game of Rock Paper Scissors</h1>
                 <h2>Play a game agaisnt the computer</h2>
+            </div>
+            <div class="appContent appDescription">
+                <h1>Application Function</h1>
+                <h2>Retrieve Inputs from User and Computer which are attributed to an array where we store the data and then use the Math.Random() function to grab a random index from the options array, and apply it as the computers choice, compare the choice to the users input choice and check to see if the win condition has been met. If win condition has been met, display 'Victory'. If win condition not met, display 'Defeat, Try Again' with option to start the playGame() function again, then return the function.</h2>
+            </div>
+            <div class="appContent appLanguages">
+                <h1>Languages Used</h1>
+                <h2>HTML, CSS, Javascript, PHP</h2>
             </div>
         </div>
         <!-- Sidebar Footer Socials -->
@@ -54,9 +62,16 @@
         <div class="content mainGameArea">
             <!-- Main Banner -->
             <div class="mainBanner center centerThis">
-                <h1>Game Begin</h1>
-                <!-- Button to invoke playGame Function -->
-                <button class="gameButton hoverSlide" id="gameButton" onclick="playGame()">CLICK TO PLAY</button>
+                <!-- Banner With Logo -->
+                <div class="mainBannerLogoRow">
+                    <a class="logoHomeLink" href="/" target="_blank" title="Home"><img class="mainLogo" alt="rps logo" title="RPS" src="./assets/images/RPS Logoaqua-green.svg"></a>
+                    <!-- Content within Banner -->
+                    <div class="bannerContent">
+                        <h1>Game Begin</h1>
+                        <!-- Button to invoke playGame Function -->
+                        <button class="gameButton hoverSlide" id="gameButton" onclick="playGame()">CLICK TO PLAY</button>
+                    </div>
+                </div>
             </div>
             <!-- Label Row -->
             <div class="label center centerThis userChoice">User: </div>
@@ -68,7 +83,7 @@
         <!-- Footer -->
         <footer class="footer centerThis">
             <div class="copyright" id="copyright">
-                Copyright 
+                Copyright ©
                 <!-- Automatic Javascript Code to getFullYear -->
                 <script src="copyrightYear.js"></script>
                  | Design by Rakib Ahmed | <a class="hoverSlide copyrightLink" href="https://piratechs.com/" target="_blank"> Piratechs</a>

@@ -14,6 +14,7 @@
 :root {
     --aqua: #014052;
     --aquaDark: #002c39;
+    --aquaGreen: #299993;
     --linkBlue: #2788c7;
     --softWhite: #c4c8cd;
 }
@@ -43,10 +44,16 @@ body {
     "sidebar main";
 }
 
+/* Global Elements */
 a {
     color: var(--softWhite);
     text-decoration: none;
     font-weight: 600;
+}
+
+::selection {
+    background: var(--aquaGreen);
+    color: var(--aquaDark);
 }
 
 header {
@@ -73,7 +80,6 @@ header h1 {
     font-size: 29px;
     color: var(--softWhite);
     text-align: left;
-    margin: 0 auto;
 }
 
 header h2 {
@@ -120,7 +126,7 @@ header h2 {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background: var(--linkBlue);
+    background: var(--aquaGreen);
     transform-origin: left;
     transform: scale(0,1);
     transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
@@ -131,20 +137,48 @@ header h2 {
     transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
 }
 
-/* Sidebar App Title */
+/* Sidebar App Info */
 .app {
     box-sizing: border-box;
     grid-area: app;
     width: 100%;
-    height: 155px;
-    border-bottom: solid 5px var(--aquaDark);
+    height: 100%;
+    display: grid;
+    grid-template-rows: 150px auto auto;
+    grid-template-areas: 
+    "appTitle"
+    "appDescription"
+    "appLanguages";
 }
-
 .appContent {
     padding: 10px 30px 15px 15px;
     margin: 0 0 0 15px;
     border-left: 5px solid var(--aquaDark);
-    height: 150px;
+    max-height: 530px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+}
+.appContent.appTitle {
+    grid-area: appTitle;
+    border-left: 5px solid var(--aquaDark);
+}
+.appContent h1 {
+    color: var(--aquaGreen);
+}
+.appContent.appDescription {
+    grid-area: appDescription;
+    overflow: scroll;
+    border-top: solid 5px var(--aquaDark);
+    border-bottom: solid 5px var(--aquaDark);
+}
+.appContent.appDescription::-webkit-scrollbar {
+    display: none;
+}
+.appContent.appLanguages {
+    grid-area: appLanguages;
 }
 
 /* Begin Main Game Area Code */
@@ -171,6 +205,10 @@ main .topbar {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+main .topbar:hover, button:hover {
+    cursor: pointer;
 }
 
 main .topbar h3 {
@@ -203,6 +241,31 @@ main .mainBanner {
     border-bottom: 5px solid var(--aqua);
 }
 
+main .mainBannerLogoRow {
+    width: 100%;
+    height: 150px;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    grid-gap: 0px;
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-areas: "logo bannerContent";
+}
+
+main .mainBannerLogoRow .logoHomeLink {
+    text-align: center;
+}
+
+.mainLogo {
+    grid-area: logo;
+    max-width: 148px;
+}
+
+.bannerContent {
+    grid-area: bannerContent;
+}
+
 main .content h1 {
     font-size: 40px;
     color: var(--softWhite);
@@ -221,6 +284,13 @@ main button {
     font-family: 'montserrat', Arial, Helvetica, sans-serif;
     font-weight: 900;
     letter-spacing: 1.8px;
+}
+
+main button.hoverSlide {
+    background: var(--aquaGreen);
+}
+main button.hoverSlide:hover::before {
+    background: var(--aqua);
 }
 
 /* Game Labels */
@@ -352,19 +422,8 @@ main footer .copyright {
 
 }
 
-/* Small Breakpoint */
-@media screen and (max-width: 612px) {
-
-    main .topbar {
-        display: none;
-    }
-
-    .homeLink {
-        min-width: 330px;
-        text-align: center;
-        width: 93.3vw;
-        padding: 0 15px;
-    }
+/* Tablet Footer Breakpoint */
+@media screen and (max-width: 900px) {
 
     .socials {
         display: none;
@@ -378,6 +437,22 @@ main footer .copyright {
 
     .copyrightLink {
         margin-left: 5px;
+    }
+
+}
+
+/* Mobile Breakpoint */
+@media screen and (max-width: 612px) {
+
+    main .topbar {
+        display: none;
+    }
+
+    .homeLink {
+        min-width: 330px;
+        text-align: center;
+        width: 93.3vw;
+        padding: 0 15px;
     }
 
 }
