@@ -4,23 +4,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
+    <!-- Main Style Sheet -->
     <link rel="stylesheet" href="./assets/style.css">
+    <!-- Importing Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.css">
+    <!-- Site Icon -->
+    <link rel="icon" href="https://piratechs.com/wp-content/uploads/2019/05/Icon.svg" type="image/x-icon">
     <!-- This is a Game of Rock Paper Scissors between the User and the Computer -->
+    <title>Rock | Paper | Scissors</title>
 </head>
 <body>
-
-    <!-- Game Intro Text -->
-    <header class="header" id="header">
-        <h1>Game of Rock Paper Scissors</h1>
-        <p>Play a game agaisnt the computer</p>
+    <!-- Game Header Sidebar -->
+    <header class="header sidebar aside headerSidebar" id="header">
+        <!-- Sidebar Topbar -->
+        <div class="topbar center centerThis hoverSlide">
+            <a href="/" class="home homeLink" id="homeLink">
+                <i class="fas fa-home home"></i> ROCK // PAPER // SCISSORS</a>
+        </div>
+        <!-- Sidebar Content -->
+        <div class="app appTitle sidebarMain">
+            <div class="appContent">
+                <h1>Game of Rock Paper Scissors</h1>
+                <h2>Play a game agaisnt the computer</h2>
+            </div>
+        </div>
+        <!-- Sidebar Footer Socials -->
+        <div class="socials sidebarFooter" id="socials">
+            <!-- Instagram Link -->
+            <a href="https://www.instagram.com/piratechsatl/" class="centerThis hoverSlide nav-link instagramLink" title="@Piratechsatl" target="_blank"><i class="fab fa-instagram"></i></a>
+            <!-- Linkedin Link -->
+            <a href="https://www.linkedin.com/in/rakib-ahmed19/" class="centerThis hoverSlide nav-link linkedInLink" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <!-- Email Link -->
+            <a href="mailto:rahmed@piratechs.com" class="centerThis hoverSlide nav-link emailLink" title="Email" target="_blank"><i class="fas fa-envelope"></i></a>
+            <!-- Piratechs Link -->
+            <a href="https://piratechs.com/" class="centerThis hoverSlide nav-link piratechsLink" title="Piratechs" target="_blank"><i class="fas fa-share-alt-square"></i></a>
+            <!-- Github Link -->
+            <a href="https://github.com/strawhat19" class="centerThis hoverSlide nav-link githubLink" title="Github" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
     </header>
-
-    <!-- Game Trigger Button -->
+    <!-- Game Main Area -->
     <main class="page-content" id="page-content">
-        <button class="gameButton" id="gameButton" onclick="playGame()">CLICK TO PLAY</button>
+          <!-- Main Topbar -->
+        <div class="topbar">
+            <div class="topbarText">
+                <h3>MAIN GAME AREA</h3>
+            </div>
+        </div>
+        <!-- Main Area -->
+        <div class="content mainGameArea">
+            <!-- Main Banner -->
+            <div class="mainBanner center centerThis">
+                <h1>Game Begin</h1>
+                <!-- Button to invoke playGame Function -->
+                <button class="gameButton hoverSlide" id="gameButton" onclick="playGame()">CLICK TO PLAY</button>
+            </div>
+            <!-- Label Row -->
+            <div class="label center centerThis userChoice">User: </div>
+            <div class="label center centerThis userScore">0</div>
+            <div class="label center centerThis computerChoice">Computer: </div>
+            <div class="label center centerThis computerScore">0</div>
+            <!-- End Main Area -->
+        </div>
+        <!-- Footer -->
+        <footer class="footer centerThis">
+            <div class="copyright" id="copyright">
+                Copyright 
+                <!-- Automatic Javascript Code to getFullYear -->
+                <script src="copyrightYear.js"></script>
+                 | Design by Rakib Ahmed | <a class="hoverSlide copyrightLink" href="https://piratechs.com/" target="_blank"> Piratechs</a>
+            </div>
+        </footer>
+    <!-- End Main -->
     </main>
 
+    <!-- Main Javascript Scripts -->
     <script src="app.js"></script>
+    <!-- End Scripts -->
 </body>
+<!-- End Body -->
 </html>
