@@ -17,6 +17,10 @@
     --aquaGreen: #299993;
     --linkBlue: #2788c7;
     --softWhite: #c4c8cd;
+    --html: #f16529;
+    --css: #2862e9;
+    --js: #f7df1e;
+    --php: #7377ad;
 }
 
 /* Main Site Controller */
@@ -45,15 +49,37 @@ body {
 }
 
 /* Global Elements */
+::selection {
+    background: var(--aquaGreen);
+    color: var(--aquaDark);
+}
+
+::-webkit-scrollbar {
+    background: var(--aqua);
+    opacity: 0;
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--aquaGreen);
+    width: 5px;
+}
+::-webkit-scrollbar-corner {
+    display: none;
+    height: 0;
+}
+::-webkit-scrollbar-track-piece {
+    display: none;
+    height: 0;
+}
+::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+}
+
 a {
     color: var(--softWhite);
     text-decoration: none;
     font-weight: 600;
-}
-
-::selection {
-    background: var(--aquaGreen);
-    color: var(--aquaDark);
 }
 
 header {
@@ -86,6 +112,7 @@ header h2 {
     color: var(--softWhite);
     font-size: 16px;
     margin: 15px 0 0;
+    line-height: 26px;
     font-weight: 300;
 }
 
@@ -169,16 +196,61 @@ header h2 {
     color: var(--aquaGreen);
 }
 .appContent.appDescription {
+    overflow-x: hidden;
     grid-area: appDescription;
     overflow: scroll;
     border-top: solid 5px var(--aquaDark);
     border-bottom: solid 5px var(--aquaDark);
 }
 .appContent.appDescription::-webkit-scrollbar {
+    background: var(--aqua);
+    opacity: 0;
+    width: 5px;
+}
+.appContent.appDescription::-webkit-scrollbar-thumb {
+    background: var(--aquaGreen);
+    width: 5px;
+}
+.appContent.appDescription::-webkit-scrollbar-corner {
     display: none;
+    height: 0;
+}
+.appContent.appDescription::-webkit-scrollbar-track-piece {
+    display: none;
+    height: 0;
+}
+.appContent.appDescription::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
 }
 .appContent.appLanguages {
     grid-area: appLanguages;
+}
+.languagesList {
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    line-height: 26px;
+}
+.language {
+    width: 50%;
+    list-style-type: none;
+}
+.html i {
+    color: var(--html);
+}
+.css i {
+    color: var(--css);
+}
+.js i {
+    color: var(--js);
+}
+.php i {
+    color: var(--php);
 }
 
 /* Begin Main Game Area Code */
