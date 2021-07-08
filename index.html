@@ -71,18 +71,23 @@
                 <div class="mainBannerLogoRow">
                     <a class="logoHomeLink" href="/" target="_blank" title="Home"><img class="mainLogo" alt="rps logo" title="RPS" src="./assets/images/RPS-Logoaqua-Green.svg"></a>
                     <!-- Content within Banner -->
-                    <div class="bannerContent">
+                    <div class="bannerContent" id="bannerContent">
                         <h1>Game Begin</h1>
                         <!-- Button to invoke playGame Function -->
-                        <button class="gameButton hoverSlide" id="gameButton" onclick="playGame()">CLICK TO PLAY</button>
+                        <button class="gameButton hoverSlide" id="gameButton" onclick="getUserName()">CLICK TO PLAY</button>
                     </div>
                 </div>
             </div>
-            <!-- Label Row -->
-            <div class="label center centerThis userChoice">User: </div>
-            <div class="label center centerThis userScore">0</div>
-            <div class="label center centerThis computerChoice">Computer: </div>
-            <div class="label center centerThis computerScore">0</div>
+            <div class="resultsRow">
+            <!-- Begin Results Row -->
+                <!-- Begin Label Row -->
+                <div id="userName" class="label center centerThis user userName">User</div>
+                <div id="userChoice" class="label center centerThis user userChoice">-</div>
+                <div id="userScore" class="label center centerThis user userScore">0</div>
+                <div id="computerName" class="label center centerThis computer computerName">Computer</div>
+                <div id="computerChoice" class="label center centerThis computer computerChoice">-</div>
+                <div data-finalColumn id="computerScore" class="label center centerThis computer computerScore">0</div>
+            </div>
             <!-- End Main Area -->
         </div>
         <!-- Footer -->

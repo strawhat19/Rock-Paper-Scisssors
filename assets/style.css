@@ -51,7 +51,7 @@ body {
 /* Global Elements */
 ::selection {
     background: var(--aquaGreen);
-    color: var(--aquaDark);
+    color: var(--softWhite);
 }
 
 ::-webkit-scrollbar {
@@ -299,11 +299,11 @@ main .content {
     text-align: center;
     padding: 0px 0px;
     display: grid;
-    grid-template-columns: 25% auto auto auto;
-    grid-template-rows: 150px 40px auto;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: 150px auto;
     grid-template-areas: 
-    "banner banner banner banner"
-    "userChoice userScore computerChoice computerScore";
+    "banner banner banner banner banner banner"
+    "results results results results results results";
 }
 
 main .mainBanner {
@@ -318,6 +318,7 @@ main .mainBannerLogoRow {
     height: 150px;
     justify-content: flex-start;
     align-items: center;
+    justify-items: flex-start;
     text-align: left;
     grid-gap: 0px;
     display: grid;
@@ -345,7 +346,7 @@ main .content h1 {
     margin: 0 auto;
 }
 
-/* Bgein Game Button */
+/* Game Button */
 main button {
     background: var(--aqua);
     border: 5px solid var(--aquaDark);
@@ -365,6 +366,13 @@ main button.hoverSlide:hover::before {
     background: var(--aqua);
 }
 
+main .resultsRow {
+    grid-area: results;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-areas: "userName userChoice userScore computerName computerChoice computerScore";
+}
+
 /* Game Labels */
 main .label {
     outline: 5px solid var(--aqua);
@@ -381,6 +389,55 @@ main .computerChoice {
 main .computerScore {
     grid-area: computerScore;
 }
+
+/* User Background Changes */
+.userBG {
+    background: var(--aqua);
+}
+
+/* User Animations */
+.slideLeftAnimation {
+    position: relative;
+    transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+.slideLeftAnimation::before {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    width: 96%;
+    height: 2.5px;
+    transform: scale(0,1);
+    background: var(--aquaGreen);
+    transform-origin: left;
+    animation: slideLeftLine 0.5s ease-in-out 6 alternate;
+    transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    opacity: 1;
+}
+
+@keyframes slideLeftLine {
+
+    0% {
+        transform: scale(0,1);
+        opacity: 0;
+        transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    100% {
+        transform: scale(1,1);
+        transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+        opacity: 1;
+    }
+
+}
+
+/* .slideLeftAnimation:hover::before {
+    transform: scale(1,1);
+    transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+} */
 
 main footer {
     grid-area: footer;
@@ -456,6 +513,10 @@ main footer .copyright {
     header {
         border-left: none;
         border-right: none;
+    }
+
+    .appContent.appDescription {
+        display: none;
     }
 
     .homeLink {
