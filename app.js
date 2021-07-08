@@ -71,7 +71,8 @@ function playGame() {
         var computerSelection = randomSelection();
         var youWin = isWinner(selection, computerSelection);
         var computerWin = isWinner(computerSelection, selection);
-        console.log(computerSelection);
+        console.log("Your selection is " + selection.name);
+        console.log("Computer selection is " + computerSelection.name);
     }
 
 // Global Variables
@@ -82,23 +83,27 @@ function playGame() {
     var paperButton = document.getElementById("paperButton");
     var scissorsButton = document.getElementById("scissorsButton");
 
-    if (rockButton.addEventListener('click')) {
-        userChoiceCont.innerText = selection.name;
-    } else if (paperButton.addEventListener('click')) {
-        userChoiceCont.innerText = selection.name;
-    } else if (scissorsButton.addEventListener('click')) {
-        userChoiceCont.innerText = selection.name;
-    }
+    // if (rockButton.addEventListener('click')) {
+    //     userChoiceCont.innerText = selection.name;
+    // } else if (paperButton.addEventListener('click')) {
+    //     userChoiceCont.innerText = selection.name;
+    // } else if (scissorsButton.addEventListener('click')) {
+    //     userChoiceCont.innerText = selection.name;
+    // }
     
   }
 
     function isWinner(selection, computerSelection) {
-        if (selection.beats == computerSelection.name) {
+
+        if (selection.beats === computerSelection.name) {
             console.log("You Win");
-        } else {
+            return selection.beats === computerSelection.name;
+        } else if (selection.beats != computerSelection.name) {
             console.log("Computer Wins");
+            return selection.beats != computerSelection.name;
         }
-        return selection.beats === computerSelection.name;
+
+        
     }
 
     function randomSelection() {
