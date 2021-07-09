@@ -7,6 +7,8 @@ var finalColumn = document.querySelector('[data-finalColumn]');
 var userNameCont = document.getElementById("userName");
 var userChoiceCont = document.getElementById("userChoice");
 var userScoreCont = document.getElementById("userScore");
+var computerChoiceCont = document.getElementById("computerChoice");
+var computerScoreCont = document.getElementById("computerScore");
 
 var SELECTIONS = [
     {
@@ -31,9 +33,9 @@ function getUserName() {
     userNameCont.innerHTML = userName;
 
     userNameCont.classList.toggle("slideLeftAnimation");
-    userNameCont.classList.toggle("userBG");
-    userChoiceCont.classList.toggle("userBG");
-    userScoreCont.classList.toggle("userBG");
+    // userNameCont.classList.toggle("userBG");
+    // userChoiceCont.classList.toggle("userBG");
+    // userScoreCont.classList.toggle("userBG");
 
     playGame();
 }
@@ -71,6 +73,8 @@ function playGame() {
         var computerSelection = randomSelection();
         var youWin = isWinner(selection, computerSelection);
         var computerWin = isWinner(computerSelection, selection);
+        userChoiceCont.textContent = selection.name;
+        computerChoiceCont.textContent = computerSelection.name;
         console.log("Your selection is " + selection.name);
         console.log("Computer selection is " + computerSelection.name);
     }
@@ -79,31 +83,25 @@ function playGame() {
 
   function addResults() {
 
-    var rockButton = document.getElementById("rockButton");
-    var paperButton = document.getElementById("paperButton");
-    var scissorsButton = document.getElementById("scissorsButton");
 
-    // if (rockButton.addEventListener('click')) {
-    //     userChoiceCont.innerText = selection.name;
-    // } else if (paperButton.addEventListener('click')) {
-    //     userChoiceCont.innerText = selection.name;
-    // } else if (scissorsButton.addEventListener('click')) {
-    //     userChoiceCont.innerText = selection.name;
-    // }
     
   }
 
     function isWinner(selection, computerSelection) {
 
-        if (selection.beats === computerSelection.name) {
-            console.log("You Win");
-            return selection.beats === computerSelection.name;
-        } else if (selection.beats != computerSelection.name) {
-            console.log("Computer Wins");
-            return selection.beats != computerSelection.name;
+        if (selection.name === computerSelection.name) {
+            bannerCont.children[0].textContent = "It's a Draw!";
+        } else if (selection.name === computerSelection.beats) {
+            bannerCont.children[0].textContent = "You Win!";
+        } else if (computerSelection.beats === selection.name) {
+            bannerCont.children[0].textContent = "You Win!";
+        } else if (selection.beats === computerSelection.name) {
+            bannerCont.children[0].textContent = "Computer Wins!";
+        } else {
+            bannerCont.children[0].textContent = "Computer Wins!";
         }
+        return selection.beats === computerSelection.name;
 
-        
     }
 
     function randomSelection() {

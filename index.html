@@ -72,7 +72,7 @@
                     <a class="logoHomeLink" href="/" target="_blank" title="Home"><img class="mainLogo" alt="rps logo" title="RPS" src="./assets/images/RPS-Logoaqua-Green.svg"></a>
                     <!-- Content within Banner -->
                     <div class="bannerContent" id="bannerContent">
-                        <h1>Game Begin</h1>
+                        <h1 id="beginningText" class="beginningText">Begin Game</h1>
                         <!-- Button to invoke playGame Function -->
                         <button class="gameButton hoverSlide" id="gameButton" onclick="getUserName()">CLICK TO PLAY</button>
                     </div>
@@ -81,12 +81,12 @@
             <div class="resultsRow">
             <!-- Begin Results Row -->
                 <!-- Begin Label Row -->
-                <div id="userName" class="label center centerThis user userName">User</div>
-                <div id="userChoice" class="label center centerThis user userChoice">-</div>
-                <div id="userScore" class="label center centerThis user userScore">0</div>
-                <div id="computerName" class="label center centerThis computer computerName">Computer</div>
-                <div id="computerChoice" class="label center centerThis computer computerChoice">-</div>
-                <div data-finalColumn id="computerScore" class="label center centerThis computer computerScore">0</div>
+                <div data-label id="userName" class="label center centerThis user userName">User</div>
+                <div data-label id="userChoice" class="label center centerThis user userChoice">-</div>
+                <div data-label id="userScore" class="label center centerThis user userScore">0</div>
+                <div data-label="" id="computerName" class="label center centerThis computer computerName">Computer</div>
+                <div data-label="" id="computerChoice" class="label center centerThis computer computerChoice">-</div>
+                <div data-label="" data-finalColumn id="computerScore" class="label center centerThis computer computerScore">0</div>
             </div>
             <!-- End Main Area -->
         </div>

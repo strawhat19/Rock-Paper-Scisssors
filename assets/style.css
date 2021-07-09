@@ -35,6 +35,7 @@ html {
     scroll-behavior: smooth;
 }
 
+/* The Power of Display Grid */
 body {
     transition: 0.15s cubic-bezier(0.77,0.2,0.05,1.0);
     background: var(--aqua);
