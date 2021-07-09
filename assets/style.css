@@ -381,7 +381,7 @@ main .label {
 
 main .labelSpan {
     transform: rotateZ(-90deg);
-    font-size: 39px;
+    font-size: 35px;
     letter-spacing: 8px;
 }
 main .userChoice {

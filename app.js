@@ -67,7 +67,6 @@ function playGame() {
             var selection = SELECTIONS.find(selection => selection.name === selectionName);
             makeSelection(selection);
         })
-        addResults();
     })
 
     function makeSelection(selection) {
@@ -90,33 +89,38 @@ function playGame() {
             userNameCont.style.background = "var(--aqua)";
             computerChoiceCont.style.background = "var(--aqua)";
             computerNameCont.style.background = "var(--aqua)";
+            
         } else if (selection.name === computerSelection.beats) {
             bannerCont.children[0].textContent = "You Win!";
             userChoiceCont.style.background = "#299993";
             userNameCont.style.background = "#299993";
             computerChoiceCont.style.background = "#000";
             computerNameCont.style.background = "#000";
+            
         } else if (computerSelection.beats === selection.name) {
             bannerCont.children[0].textContent = "You Win!";
             userChoiceCont.style.background = "#299993";
             userNameCont.style.background = "#299993";
             computerChoiceCont.style.background = "#000";
             computerNameCont.style.background = "#000";
+            
         } else if (selection.beats === computerSelection.name) {
             bannerCont.children[0].textContent = "Computer Wins!";
             computerChoiceCont.style.background = "#299993";
             computerNameCont.style.background = "#299993";
             userChoiceCont.style.background = "#000";
             userNameCont.style.background = "#000";
+            
         } else {
             bannerCont.children[0].textContent = "Computer Wins!";
             computerChoiceCont.style.background = "#299993";
             computerNameCont.style.background = "#299993";
             userChoiceCont.style.background = "#000";
             userNameCont.style.background = "#000";
+            
         }
         return selection.beats === computerSelection.name;
-
+        playGame();
     }
 
     function randomSelection() {
