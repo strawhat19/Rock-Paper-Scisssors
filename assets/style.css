@@ -372,6 +372,7 @@ main .resultsRow {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     grid-template-areas: "userName userChoice computerName computerChoice";
+    max-width: 100vw;
 }
 
 /* Game Labels */
