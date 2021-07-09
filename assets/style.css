@@ -633,4 +633,7 @@ main footer .copyright {
         width: 98vw;
     }
 
+    main .labelSpan {
+        font-size: 23px;
+    }
 }
