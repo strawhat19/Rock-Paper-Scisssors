@@ -94,29 +94,29 @@ function playGame() {
             bannerCont.children[0].textContent = "You Win!";
             userChoiceCont.style.background = "#299993";
             userNameCont.style.background = "#299993";
-            computerChoiceCont.style.background = "#000";
-            computerNameCont.style.background = "#000";
+            computerChoiceCont.style.background = "var(--aquaDark)";
+            computerNameCont.style.background = "var(--aquaDark)";
             
         } else if (computerSelection.beats === selection.name) {
             bannerCont.children[0].textContent = "You Win!";
             userChoiceCont.style.background = "#299993";
             userNameCont.style.background = "#299993";
-            computerChoiceCont.style.background = "#000";
-            computerNameCont.style.background = "#000";
+            computerChoiceCont.style.background = "var(--aquaDark)";
+            computerNameCont.style.background = "var(--aquaDark)";
             
         } else if (selection.beats === computerSelection.name) {
             bannerCont.children[0].textContent = "Computer Wins!";
             computerChoiceCont.style.background = "#299993";
             computerNameCont.style.background = "#299993";
-            userChoiceCont.style.background = "#000";
-            userNameCont.style.background = "#000";
+            userChoiceCont.style.background = "var(--aquaDark)";
+            userNameCont.style.background = "var(--aquaDark)";
             
         } else {
             bannerCont.children[0].textContent = "Computer Wins!";
             computerChoiceCont.style.background = "#299993";
             computerNameCont.style.background = "#299993";
-            userChoiceCont.style.background = "#000";
-            userNameCont.style.background = "#000";
+            userChoiceCont.style.background = "var(--aquaDark)";
+            userNameCont.style.background = "var(--aquaDark)";
             
         }
         return selection.beats === computerSelection.name;
