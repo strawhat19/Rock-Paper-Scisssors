@@ -34,10 +34,7 @@ function getUserName() {
     userNameCont.children[0].innerHTML = userName;
 
     userNameCont.classList.toggle("slideLeftAnimation");
-    // userNameCont.classList.toggle("userBG");
-    // userChoiceCont.classList.toggle("userBG");
-    // userScoreCont.classList.toggle("userBG");
-
+ 
     playGame();
 }
 

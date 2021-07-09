@@ -329,6 +329,7 @@ main .mainBannerLogoRow {
 
 main .mainBannerLogoRow .logoHomeLink {
     text-align: center;
+    justify-self: center;
 }
 
 .mainLogo {
@@ -592,6 +593,10 @@ main footer .copyright {
 
 /* Mobile Breakpoint */
 @media screen and (max-width: 612px) {
+
+    body {
+        max-height: 90vh;
+    }
 
     main .topbar {
         display: none;
