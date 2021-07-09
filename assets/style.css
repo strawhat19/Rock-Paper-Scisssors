@@ -623,4 +623,8 @@ main footer .copyright {
         display: none !important;
     }
 
+    .topbar.center.centerThis.hoverSlide {
+        width: 98vw;
+    }
+
 }
