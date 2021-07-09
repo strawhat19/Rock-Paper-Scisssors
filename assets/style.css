@@ -594,9 +594,9 @@ main footer .copyright {
 /* Mobile Breakpoint */
 @media screen and (max-width: 612px) {
 
-    body {
+    /* body {
         max-height: 30vh;
-    }
+    } */
 
     main .topbar {
         display: none;
@@ -618,8 +618,9 @@ main footer .copyright {
     }
 
     main button {
-        margin: 2px 3px;
-        padding: 5px 20px;
+        margin: 2px 0px;
+        padding: 5px 6px;
+        letter-spacing: 1px;
     }
 
     main .mainBannerLogoRow {
