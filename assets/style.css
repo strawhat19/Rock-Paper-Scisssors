@@ -595,7 +595,7 @@ main footer .copyright {
 @media screen and (max-width: 612px) {
 
     body {
-        max-height: 90vh;
+        max-height: 80vh;
     }
 
     main .topbar {
