@@ -72,6 +72,7 @@ function playGame() {
         var computerWin = isWinner(computerSelection, selection);
         userChoiceCont.children[0].textContent = selection.name;
         computerChoiceCont.children[0].textContent = computerSelection.name;
+
         console.log("Your selection is " + selection.name);
         console.log("Computer selection is " + computerSelection.name);
     }
