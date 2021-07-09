@@ -81,11 +81,14 @@ function playGame() {
 
 // Global Variables
 
-  function addResults() {
+//   function addResults() {
+//         var i = 0;
+//         for (i = 0; i++) {
 
+//         }
 
     
-  }
+//   }
 
     function isWinner(selection, computerSelection) {
 
@@ -115,3 +118,23 @@ function playGame() {
     }
 
 }
+
+// Media Queries
+var copyright = document.getElementById("copyright");
+var scriptYear = document.getElementById("copyrightYear");
+
+// Function to continually check window
+function copyrightMobileFix(copyrightMobile) {
+    if (copyrightMobile.matches) {
+        copyright.innerHTML = 'Copyright © 2021';
+    } else {
+        copyright.innerHTML = 'Copyright © 2021 | Design by Rakib Ahmed | <a class="hoverSlide copyrightLink" href="https://piratechs.com/" target="_blank"> Piratechs</a>';
+    }
+}
+
+// Initializing media query
+var copyrightMobile = window.matchMedia("(max-width: 612px)");
+
+// Adding Listener
+copyrightMobileFix(copyrightMobile);
+copyrightMobile.addListener(copyrightMobileFix);

@@ -370,8 +370,8 @@ main button.hoverSlide:hover::before {
 main .resultsRow {
     grid-area: results;
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
-    grid-template-areas: "userName userChoice userScore computerName computerChoice computerScore";
+    grid-template-columns: auto auto auto auto;
+    grid-template-areas: "userName userChoice computerName computerChoice";
 }
 
 /* Game Labels */
@@ -595,6 +595,23 @@ main footer .copyright {
         text-align: center;
         width: 93.3vw;
         padding: 0 15px;
+    }
+
+    .logoHomeLink {
+        display: none;
+    }
+
+    main .mainBannerLogoRow {
+        grid-template-areas: "bannerContent bannerContent";
+        justify-content: center;
+    }
+
+    .bannerContent {
+        text-align: center;
+    }
+
+    .copyright :not(script) {
+        display: none !important;
     }
 
 }
