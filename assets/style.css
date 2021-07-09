@@ -370,13 +370,19 @@ main button.hoverSlide:hover::before {
 main .resultsRow {
     grid-area: results;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 25% 25% 25% 25%;
     grid-template-areas: "userName userChoice computerName computerChoice";
 }
 
 /* Game Labels */
 main .label {
     outline: 5px solid var(--aqua);
+}
+
+main .labelSpan {
+    transform: rotateZ(-90deg);
+    font-size: 39px;
+    letter-spacing: 8px;
 }
 main .userChoice {
     grid-area: userChoice;
@@ -602,7 +608,7 @@ main footer .copyright {
     }
 
     main .content h1 {
-        font-size: 35px;
+        font-size: 31px;
     }
 
     main button {

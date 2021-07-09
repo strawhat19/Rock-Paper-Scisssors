@@ -8,6 +8,7 @@ var userNameCont = document.getElementById("userName");
 var userChoiceCont = document.getElementById("userChoice");
 var userScoreCont = document.getElementById("userScore");
 var computerChoiceCont = document.getElementById("computerChoice");
+var computerNameCont = document.getElementById("computerName");
 var computerScoreCont = document.getElementById("computerScore");
 
 var SELECTIONS = [
@@ -30,7 +31,7 @@ function getUserName() {
 
     var userName = prompt("Enter your User Name", "User");
 
-    userNameCont.innerHTML = userName;
+    userNameCont.children[0].innerHTML = userName;
 
     userNameCont.classList.toggle("slideLeftAnimation");
     // userNameCont.classList.toggle("userBG");
@@ -73,35 +74,46 @@ function playGame() {
         var computerSelection = randomSelection();
         var youWin = isWinner(selection, computerSelection);
         var computerWin = isWinner(computerSelection, selection);
-        userChoiceCont.textContent = selection.name;
-        computerChoiceCont.textContent = computerSelection.name;
+        userChoiceCont.children[0].textContent = selection.name;
+        computerChoiceCont.children[0].textContent = computerSelection.name;
         console.log("Your selection is " + selection.name);
         console.log("Computer selection is " + computerSelection.name);
     }
 
 // Global Variables
 
-//   function addResults() {
-//         var i = 0;
-//         for (i = 0; i++) {
-
-//         }
-
-    
-//   }
-
     function isWinner(selection, computerSelection) {
 
         if (selection.name === computerSelection.name) {
             bannerCont.children[0].textContent = "It's a Draw!";
+            userChoiceCont.style.background = "var(--aqua)";
+            userNameCont.style.background = "var(--aqua)";
+            computerChoiceCont.style.background = "var(--aqua)";
+            computerNameCont.style.background = "var(--aqua)";
         } else if (selection.name === computerSelection.beats) {
             bannerCont.children[0].textContent = "You Win!";
+            userChoiceCont.style.background = "#299993";
+            userNameCont.style.background = "#299993";
+            computerChoiceCont.style.background = "#000";
+            computerNameCont.style.background = "#000";
         } else if (computerSelection.beats === selection.name) {
             bannerCont.children[0].textContent = "You Win!";
+            userChoiceCont.style.background = "#299993";
+            userNameCont.style.background = "#299993";
+            computerChoiceCont.style.background = "#000";
+            computerNameCont.style.background = "#000";
         } else if (selection.beats === computerSelection.name) {
             bannerCont.children[0].textContent = "Computer Wins!";
+            computerChoiceCont.style.background = "#299993";
+            computerNameCont.style.background = "#299993";
+            userChoiceCont.style.background = "#000";
+            userNameCont.style.background = "#000";
         } else {
             bannerCont.children[0].textContent = "Computer Wins!";
+            computerChoiceCont.style.background = "#299993";
+            computerNameCont.style.background = "#299993";
+            userChoiceCont.style.background = "#000";
+            userNameCont.style.background = "#000";
         }
         return selection.beats === computerSelection.name;
 
