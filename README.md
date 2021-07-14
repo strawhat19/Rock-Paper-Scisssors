@@ -8,5 +8,10 @@ Retrieve Inputs from User and Computer which are attributed to an array where we
 https://strawhat19.github.io/Rock-Paper-Scisssors/
 
 ## Application Design
-![Rock Paper Scissors on Desktop](./assets/images/Rock-Paper-Scissors-Application.png)
-![Rock Paper Scissors on Mobile](./assets/images/iphoneTransparentVersion.png)
+
+Rock // Paper // Scissors - Desktop             |  Rock // Paper // Scissors - Mobile
+:-------------------------:|:-------------------------:
+![Rock Paper Scissors on Desktop](./assets/images/Rock-Paper-Scissors-Application.png)  |  ![Rock Paper Scissors on Mobile](./assets/images/iphoneTransparentVersion.png)
+
+
+
