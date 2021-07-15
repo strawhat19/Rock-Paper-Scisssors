@@ -238,7 +238,8 @@ header h2 {
     line-height: 26px;
 }
 .language {
-    width: 50%;
+    padding-top: 1em;
+    width: 33%;
     list-style-type: none;
 }
 .html i {
