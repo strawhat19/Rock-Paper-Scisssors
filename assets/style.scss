@@ -1,0 +1,647 @@
+/* Rock Paper Scissors Game Styles */
+
+/* Using Mainly CSS Grid and Flexbox */
+
+/* Imported Fonts from Google Fonts */
+
+/* Montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Caveat */
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap');
+
+/* Variables */
+:root {
+    --aqua: #014052;
+    --aquaDark: #002c39;
+    --aquaGreen: #299993;
+    --linkBlue: #2788c7;
+    --softWhite: #c4c8cd;
+    --html: #f16529;
+    --css: #2862e9;
+    --js: #f7df1e;
+    --php: #7377ad;
+}
+
+/* Main Site Controller */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+/* The Power of Display Grid */
+body {
+    transition: 0.15s cubic-bezier(0.77,0.2,0.05,1.0);
+    background: var(--aqua);
+    color: var(--softWhite);
+    font-family: 'montserrat', Arial, Helvetica, sans-serif;
+    letter-spacing: 1.8px;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 33% auto;
+    grid-template-areas: 
+    "sidebar main";
+}
+
+/* Global Elements */
+::selection {
+    background: var(--aquaGreen);
+    color: var(--softWhite);
+}
+
+::-webkit-scrollbar {
+    background: var(--aqua);
+    opacity: 0;
+    width: 5px;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--aquaGreen);
+    width: 5px;
+}
+::-webkit-scrollbar-corner {
+    display: none;
+    height: 0;
+}
+::-webkit-scrollbar-track-piece {
+    display: none;
+    height: 0;
+}
+::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+}
+
+a {
+    color: var(--softWhite);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+header {
+    grid-area: sidebar;
+    display: grid;
+        grid-template-rows: 40px auto 50px;
+    justify-items: center;
+    align-items: flex-start;
+    grid-template-areas: 
+    "topbar"
+    "app"
+    "socials";
+    border: 5px solid var(--aquaDark);
+}
+
+/* Side Bar Top Title Bar */
+header .topbar {
+    border-bottom: 5px solid var(--aquaDark);
+    transition: 0.3s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+/* Sidebar App Title and Subtitle */
+header h1 {
+    font-size: 29px;
+    color: var(--softWhite);
+    text-align: left;
+}
+
+header h2 {
+    color: var(--softWhite);
+    font-size: 16px;
+    margin: 15px 0 0;
+    line-height: 26px;
+    font-weight: 300;
+}
+
+/* Easy Class Identifiers */
+/* Grid Center Element */
+.center {
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    align-items: center;
+    grid-gap: 0px;
+}
+
+/* Flex Center Element */
+.centerThis {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: wrap;
+}
+
+/* Button Hover Effect */
+.hoverSlide {
+    position: relative;
+    z-index: 0;
+    transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+/* Create a ::before psuedo class for the animation and hide it */
+.hoverSlide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: var(--aquaGreen);
+    transform-origin: left;
+    transform: scale(0,1);
+    transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+/* Trigger the ::before to slide in on element hover */
+.hoverSlide:hover::before {
+    transform: scale(1,1);
+    transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+/* Sidebar App Info */
+.app {
+    box-sizing: border-box;
+    grid-area: app;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-rows: 150px auto auto;
+    grid-template-areas: 
+    "appTitle"
+    "appDescription"
+    "appLanguages";
+}
+.appContent {
+    padding: 10px 30px 15px 15px;
+    margin: 0 0 0 15px;
+    border-left: 5px solid var(--aquaDark);
+    max-height: 530px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+}
+.appContent.appTitle {
+    grid-area: appTitle;
+    border-left: 5px solid var(--aquaDark);
+}
+.appContent h1 {
+    color: var(--aquaGreen);
+}
+.appContent.appDescription {
+    overflow-x: hidden;
+    grid-area: appDescription;
+    overflow: scroll;
+    border-top: solid 5px var(--aquaDark);
+    border-bottom: solid 5px var(--aquaDark);
+}
+.appContent.appDescription::-webkit-scrollbar {
+    background: var(--aqua);
+    opacity: 0;
+    width: 5px;
+}
+.appContent.appDescription::-webkit-scrollbar-thumb {
+    background: var(--aquaGreen);
+    width: 5px;
+}
+.appContent.appDescription::-webkit-scrollbar-corner {
+    display: none;
+    height: 0;
+}
+.appContent.appDescription::-webkit-scrollbar-track-piece {
+    display: none;
+    height: 0;
+}
+.appContent.appDescription::-webkit-scrollbar-button {
+    display: none;
+    height: 0;
+}
+.appContent.appLanguages {
+    grid-area: appLanguages;
+}
+.languagesList {
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    line-height: 26px;
+}
+.language {
+    padding-top: 1em;
+    width: 33%;
+    list-style-type: none;
+}
+.html i {
+    color: var(--html);
+}
+.css i {
+    color: var(--css);
+}
+.js i {
+    color: var(--js);
+}
+.php i {
+    color: var(--php);
+}
+
+/* Begin Main Game Area Code */
+main {
+    grid-area: main;
+    border-top: 5px solid var(--aquaDark);
+    border-bottom: 5px solid var(--aquaDark);
+    border-right: 5px solid var(--aquaDark);
+    display: grid;
+        grid-template-rows: 40px auto 50px;
+    justify-items: center;
+    align-items: center;
+    grid-template-areas: 
+    "topbarMain"
+    "appMain"
+    "footer";
+}
+
+main .topbar {
+    grid-area: topbarMain;
+    border-bottom: 5px solid var(--aquaDark);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main .topbar:hover, button:hover {
+    cursor: pointer;
+}
+
+main .topbar h3 {
+    font-size: 16px;
+    color: var(--softWhite);
+    font-weight: 600;
+    text-align: center;
+}
+
+main .content {
+    grid-area: appMain;
+    width: 100%;
+    height: 100%;
+    border: 5px solid var(--aqua);
+    background: var(--aquaDark);
+    text-align: center;
+    padding: 0px 0px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-rows: 150px auto;
+    grid-template-areas: 
+    "banner banner banner banner banner banner"
+    "results results results results results results";
+}
+
+main .mainBanner {
+    grid-area: banner;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-bottom: 5px solid var(--aqua);
+}
+
+main .mainBannerLogoRow {
+    width: 100%;
+    height: 150px;
+    justify-content: flex-start;
+    align-items: center;
+    justify-items: flex-start;
+    text-align: left;
+    grid-gap: 0px;
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-template-areas: "logo bannerContent";
+}
+
+main .mainBannerLogoRow .logoHomeLink {
+    text-align: center;
+    justify-self: center;
+}
+
+.mainLogo {
+    grid-area: logo;
+    max-width: 148px;
+}
+
+.bannerContent {
+    grid-area: bannerContent;
+}
+
+main .content h1 {
+    font-size: 40px;
+    color: var(--softWhite);
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Game Button */
+main button {
+    background: var(--aqua);
+    border: 5px solid var(--aquaDark);
+    outline: none;
+    margin: 0 auto;
+    padding: 10px 30px;
+    color: var(--softWhite);
+    font-family: 'montserrat', Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    letter-spacing: 1.8px;
+}
+
+main button.hoverSlide {
+    background: var(--aquaGreen);
+}
+main button.hoverSlide:hover::before {
+    background: var(--aqua);
+}
+
+main .resultsRow {
+    grid-area: results;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-areas: "userName userChoice computerName computerChoice";
+    max-width: 100vw;
+}
+
+/* Game Labels */
+main .label {
+    outline: 5px solid var(--aqua);
+}
+
+main .labelSpan {
+    transform: rotateZ(-90deg);
+    font-size: 35px;
+    letter-spacing: 8px;
+}
+main .userChoice {
+    grid-area: userChoice;
+}
+main .userScore {
+    grid-area: userScore;
+}
+main .computerChoice {
+    grid-area: computerChoice;
+}
+main .computerScore {
+    grid-area: computerScore;
+}
+
+/* User Background Changes */
+.userBG {
+    background: var(--aqua);
+}
+
+/* User Animations */
+.slideLeftAnimation {
+    position: relative;
+    transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+.slideLeftAnimation::before {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    width: 96%;
+    height: 2.5px;
+    transform: scale(0,1);
+    background: var(--aquaGreen);
+    transform-origin: left;
+    animation: slideLeftLine 0.5s ease-in-out 6 alternate;
+    transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    opacity: 1;
+}
+
+@keyframes slideLeftLine {
+
+    0% {
+        transform: scale(0,1);
+        opacity: 0;
+        transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    }
+
+    100% {
+        transform: scale(1,1);
+        transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+        opacity: 1;
+    }
+
+}
+
+/* .slideLeftAnimation:hover::before {
+    transform: scale(1,1);
+    transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+} */
+
+main footer {
+    grid-area: footer;
+    border-top: 5px solid var(--aquaDark);
+    width: 100%;
+    height: 100%;
+}
+
+main footer .copyright {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.copyright .hoverSlide::before {
+    height: 2.5px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 125%;
+}
+
+/* Sidebar Footer Socials */
+.socials {
+    grid-area: socials;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: auto auto auto auto auto;
+    border-top: 5px solid var(--aquaDark);
+    width: 100%;
+    height: 100%;
+}
+
+.socials a {
+    color: var(--softWhite);
+    font-size: 20px;
+    transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+    padding: 5px 9px !important;
+    outline: 2.5px solid var(--aquaDark);
+    width: 100%;
+    height: 100%;
+}
+
+.socials a:hover {
+    outline: 5px solid var(--aquaDark);
+    transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+.socials i {
+    text-align: center;
+    width: 100%;
+    vertical-align: sub;
+}
+
+/* Media Queries */
+/* iPad and Above */
+@media screen and (min-width: 992px) {
+
+    .appContent {
+        justify-content: center;
+    }
+
+}
+
+/* iPad and Below */
+@media screen and (max-width: 992px) {
+
+    /* Hide Sidebar */
+    body {
+        grid-template-columns: 0% auto;
+        border-left: 5px solid var(--aquaDark);
+    }
+    header {
+        border-left: none;
+        border-right: none;
+    }
+
+    .appContent.appDescription {
+        display: none;
+    }
+
+    .homeLink {
+        min-width: 330px;
+        padding: 0 15px;
+    }
+
+    .topbar.center.centerThis.hoverSlide {
+        padding: 0 15px;
+        border-right: 5px solid var(--aquaDark);
+    }
+
+    /* Fix Footer Copyright Text */
+    main .topbar {
+        justify-content: flex-end;
+    }
+
+    .topbarText {
+        height: 100%;
+        display: flex;
+        padding: 0 30px;
+        border-left: 5px solid var(--aquaDark);
+        align-items: center;
+    }
+
+    /* Social Icons no Outline */
+    .socials a {
+        min-width: 40px;
+    }
+
+    /* Fix Footer Copyright Text */
+    footer.footer.centerThis {
+        justify-content: flex-end;
+    }
+
+    main footer .copyright {
+        border-left: 5px solid var(--aquaDark);
+        padding: 0 30px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+/* Tablet Footer Breakpoint */
+@media screen and (max-width: 900px) {
+
+    .socials {
+        display: none;
+    }
+
+    main footer .copyright {
+        width: 100%;
+        border-left: none;
+        text-align: center;
+    }
+
+    .copyrightLink {
+        margin-left: 5px;
+    }
+
+}
+
+/* Mobile Breakpoint */
+@media screen and (max-width: 612px) {
+
+    /* body {
+        max-height: 30vh;
+    } */
+
+    main .topbar {
+        display: none;
+    }
+
+    .homeLink {
+        min-width: 330px;
+        text-align: center;
+        width: 93.3vw;
+        padding: 0 15px;
+    }
+
+    .logoHomeLink {
+        display: none;
+    }
+
+    main .content h1 {
+        font-size: 31px;
+    }
+
+    main button {
+        margin: 2px 0px;
+        padding: 5px 6px;
+        letter-spacing: 1px;
+    }
+
+    main .mainBannerLogoRow {
+        grid-template-areas: "bannerContent bannerContent";
+        justify-content: center;
+    }
+
+    .bannerContent {
+        text-align: center;
+    }
+
+    .copyright :not(script) {
+        display: none !important;
+    }
+
+    .topbar.center.centerThis.hoverSlide {
+        width: 98vw;
+    }
+
+    main .labelSpan {
+        font-size: 20px;
+    }
+}
